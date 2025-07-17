@@ -3,4 +3,5 @@ requests
 python-dotenv
 pandas
 scikit-learn
+gdown
 # any other packages you use

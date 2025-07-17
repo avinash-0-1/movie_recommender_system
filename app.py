@@ -2,10 +2,22 @@ import pickle
 import streamlit as st
 import requests
 import os
+import gdown
 from dotenv import load_dotenv
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
+
+# -- Google Drive download helper --
+def download_model(file_id, output_path):
+    if not os.path.exists(output_path):
+        url = f'https://drive.google.com/uc?id={file_id}'
+        gdown.download(url, output_path, quiet=False)
+
+# -- Download the model files from Google Drive --
+os.makedirs("model", exist_ok=True)
+download_model('13YwYW5Zzqa1CloduU8v_AJTD3bJyaclO', 'model/movie_list.pkl')
+download_model('1JKhqN_-rtqPDwY4kJP-XPOjxwgOzwJc6', 'model/similarity.pkl')
 
 def fetch_poster(movie_id):
     try:
@@ -39,8 +51,9 @@ movies = pickle.load(open('model/movie_list.pkl', 'rb'))
 similarity = pickle.load(open('model/similarity.pkl', 'rb'))
 
 # ---- custom CSS------
-with open("style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+if os.path.exists("style.css"):
+    with open("style.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 movie_list = movies['title'].values
 selected_movie = st.selectbox("Type or select a movie from the dropdown", movie_list)
@@ -52,9 +65,3 @@ if st.button('Show Recommendation'):
         with cols[i]:
             st.text(recommended_movie_names[i])
             st.image(recommended_movie_posters[i])
-
-
-
-
-
-            
