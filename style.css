@@ -84,7 +84,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-left:115% ;
+        margin-left:90% ;
     }
 }
 @media (max-width: 600px) {
@@ -95,7 +95,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-left:115% ;
+        margin-left:90% ;
         
     }
     .stButton>button {
