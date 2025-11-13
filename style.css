@@ -40,7 +40,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-left:110% ;
+        margin-left:115% ;
     }
     .stButton>button {
         font-family: "Kranky", serif !important;
@@ -84,6 +84,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        margin-left:115% ;
     }
 }
 @media (max-width: 600px) {
@@ -94,6 +95,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
+        margin-left:115% ;
         
     }
     .stButton>button {
