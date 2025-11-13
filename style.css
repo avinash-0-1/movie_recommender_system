@@ -81,6 +81,11 @@
         font-size: 0.95rem;
         padding: 0.5em 1em;
     }
+    .stButton {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 }
 @media (max-width: 600px) {
     h2 {
