@@ -40,7 +40,7 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        margin-left:120% ;
+        margin-left:125px ;
     }
     .stButton>button {
         font-family: "Kranky", serif !important;
